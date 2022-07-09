@@ -1,8 +1,11 @@
 import prompt
 import brain_games.games.even
+import brain_games.games.calc
+
 
 games_description = {
     'even': 'Answer "yes" if the number is even, otherwise answer "no".',
+    'calc': 'What is the result of the expression?'
 }
 
 
@@ -17,6 +20,8 @@ def play_games(game):
     for i in range(0, 3):
         if game == 'even':
             result = brain_games.games.even.main()
+        elif game == 'calc':
+            result = brain_games.games.calc.main()
 
         (question, correct_answer) = result
         print(f'Question: {question}')
