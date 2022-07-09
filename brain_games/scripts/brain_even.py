@@ -1,8 +1,8 @@
-from brain_games.game_logic import even
+import brain_games.play
 
 
 def main():
-    even.welcome_user()
+    brain_games.play.play_games('even')
 
 
 if __name__ == '__main__':
