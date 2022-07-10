@@ -7,7 +7,7 @@ build:
 publish:
 	poetry publish --dry-run
 
-flake:
+lint:
 	poetry run flake8 brain_games
 	
 package-install:
@@ -21,3 +21,6 @@ brain-games:
 
 brain-even:
 	poetry run brain-even
+
+brain-calc:
+	poetry run brain-calc
