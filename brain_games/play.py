@@ -1,8 +1,5 @@
 import prompt
-import brain_games.games.even
-import brain_games.games.calc
-import brain_games.games.gcd
-import brain_games.games.progression
+from brain_games.games import even, calc, gcd, progression
 
 
 games_description = {
@@ -16,15 +13,13 @@ games_description = {
 def play_games(game, username):
     for i in range(0, 3):
         if game == 'even':
-            result = brain_games.games.even.main()
+            result = even.main()
         elif game == 'calc':
-            result = brain_games.games.calc.main()
+            result = calc.main()
         elif game == 'gcd':
-            result = brain_games.games.gcd.main()
-        elif game == 'progression':
-            result = brain_games.games.progression.main()
+            result = gcd.main()
         else:
-            return
+            result = progression.main()
 
         (question, correct_answer) = result
         print(f'Question: {question}')
