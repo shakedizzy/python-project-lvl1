@@ -1,11 +1,13 @@
 import prompt
 import brain_games.games.even
 import brain_games.games.calc
+import brain_games.games.gcd
 
 
 games_description = {
     'even': 'Answer "yes" if the number is even, otherwise answer "no".',
-    'calc': 'What is the result of the expression?'
+    'calc': 'What is the result of the expression?',
+    'gcd': 'Find the greatest common divisor of given numbers.'
 }
 
 
@@ -15,6 +17,10 @@ def play_games(game, username):
             result = brain_games.games.even.main()
         elif game == 'calc':
             result = brain_games.games.calc.main()
+        elif game == 'gcd':
+            result = brain_games.games.gcd.main()
+        else:
+            return
 
         (question, correct_answer) = result
         print(f'Question: {question}')
