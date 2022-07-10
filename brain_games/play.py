@@ -2,12 +2,14 @@ import prompt
 import brain_games.games.even
 import brain_games.games.calc
 import brain_games.games.gcd
+import brain_games.games.progression
 
 
 games_description = {
     'even': 'Answer "yes" if the number is even, otherwise answer "no".',
     'calc': 'What is the result of the expression?',
-    'gcd': 'Find the greatest common divisor of given numbers.'
+    'gcd': 'Find the greatest common divisor of given numbers.',
+    'progression': 'What number is missing in the progression?'
 }
 
 
@@ -19,6 +21,8 @@ def play_games(game, username):
             result = brain_games.games.calc.main()
         elif game == 'gcd':
             result = brain_games.games.gcd.main()
+        elif game == 'progression':
+            result = brain_games.games.progression.main()
         else:
             return
 
