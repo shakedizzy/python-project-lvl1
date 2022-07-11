@@ -1,8 +1,15 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.2.0"
-description = "Brain ganes"
+description = "Brain games"
 authors = ["shakedizzy <shakedizzy81@gmail.com>"]
+licence = "MIT"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Games/Entertainment :: Puzzle Games"
+]
 packages = [
   { include = "brain_games" },
 ]
