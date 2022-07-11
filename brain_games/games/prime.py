@@ -1,4 +1,5 @@
 from random import randint
+from math import sqrt
 
 
 def generate_number():
@@ -14,7 +15,10 @@ def generate_number():
 
 
 def is_prime(number):
-    return
+    for i in range(2, int(sqrt(number) + 1)):
+        if number % i == 0:
+            return 'no'
+    return 'yes'
 
 
 def main():
