@@ -1,25 +1,26 @@
 import prompt
-from brain_games.games import even, calc, gcd, progression
+from brain_games.games import even, calc, gcd, prime, progression
 
+games = {
+    'even': even.main,
+    'calc': calc.main,
+    'gcd': gcd.main,
+    'progression': progression.main,
+    'prime': prime.main
+}
 
 games_description = {
     'even': 'Answer "yes" if the number is even, otherwise answer "no".',
     'calc': 'What is the result of the expression?',
     'gcd': 'Find the greatest common divisor of given numbers.',
-    'progression': 'What number is missing in the progression?'
+    'progression': 'What number is missing in the progression?',
+    'prime': 'Answer "yes" if given number is prime. Otherwise answer "no".'
 }
 
 
 def play_games(game, username):
     for i in range(0, 3):
-        if game == 'even':
-            result = even.main()
-        elif game == 'calc':
-            result = calc.main()
-        elif game == 'gcd':
-            result = gcd.main()
-        else:
-            result = progression.main()
+        result = games[game]()
 
         (question, correct_answer) = result
         print(f'Question: {question}')
