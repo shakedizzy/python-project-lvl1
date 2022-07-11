@@ -1,7 +1,7 @@
 import prompt
 from brain_games.games import even, calc, gcd, prime, progression
 
-games = {
+GAMES = {
     'even': even.main,
     'calc': calc.main,
     'gcd': gcd.main,
@@ -9,7 +9,7 @@ games = {
     'prime': prime.main
 }
 
-games_description = {
+GAMES_DESCRIPTION = {
     'even': 'Answer "yes" if the number is even, otherwise answer "no".',
     'calc': 'What is the result of the expression?',
     'gcd': 'Find the greatest common divisor of given numbers.',
@@ -20,7 +20,7 @@ games_description = {
 
 def play_games(game, username):
     for i in range(0, 3):
-        result = games[game]()
+        result = GAMES[game]()
 
         (question, correct_answer) = result
         print(f'Question: {question}')
@@ -35,7 +35,7 @@ Correct answer was '{correct_answer}'.")
             print(f'Let\'s try again, {username}!')
             return
 
-    print(f'Congratulations, {username}')
+    print(f'Congratulations, {username}!')
 
 
 def main(game):
@@ -43,8 +43,8 @@ def main(game):
     username = prompt.string('May I have your name? ')
     print(f'Hello, {username}')
 
-    game_welcome_message = games_description[game]\
-        if game in games_description else 'Game not found'
+    game_welcome_message = GAMES_DESCRIPTION[game]\
+        if game in GAMES_DESCRIPTION else 'Game not found'
     print(game_welcome_message)
     play_games(game, username)
 
